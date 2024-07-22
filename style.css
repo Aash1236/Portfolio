@@ -716,3 +716,21 @@ footer span a:hover{
         line-height: 38px;
     }
 }
+ /* mobile */
+ @media (max-width: 768px) {
+    .home {
+        background-position: calc(100% - 10%) bottom; 
+        background-size: auto 100%; 
+        background-attachment: scroll; 
+    }
+}
+
+/* small devices */
+@media (max-width: 480px) {
+    .home {
+        background-position: calc(100% - 15%) bottom;
+        background-size: auto 100%; 
+        background-attachment: scroll; 
+    }
+}
+
