@@ -68,3 +68,33 @@ $(document).ready(function(){
         }
     });
 });
+
+//form
+document.querySelector("form").addEventListener("submit", function(event){
+    event.preventDefault();
+    const form = event.target;
+
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(respose => {
+        if (respose.ok) {
+            form.style.display = "none";
+            document.getElementById("form-response").style.display = "block";
+            form.reset();
+        }else{
+            respose.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    alert(data["errors"].map(error => error["message"]).join(", "));
+                }else{
+                    alert("Oops! There was a problem submitting your message")
+                }
+            });
+        }
+    }).catch(error => {
+        alert("Oops! There was a problem submitting your message")
+    });
+});

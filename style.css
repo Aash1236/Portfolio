@@ -303,6 +303,9 @@ section .title::after{
 .card{
     height: 350px;
 }
+.serv-content .card {
+    height: 420px;
+}
 
 /* skills section */
 
