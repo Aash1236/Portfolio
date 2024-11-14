@@ -32,7 +32,7 @@ $(document).ready(function(){
 
     //typing
     var typed = new Typed(".typing", {
-        strings: ["Front-End Developer"],
+        strings: ["Fullstack Developer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
